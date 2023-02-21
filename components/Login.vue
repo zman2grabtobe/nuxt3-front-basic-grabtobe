@@ -1,74 +1,49 @@
 <template>
     <div class="login">
-      <el-card>
-        <h2>Login</h2>
-            <el-form
-            class="login-form"
-            :model="loginObj.model"
-            :rules="loginObj.rules"
-            ref="form"
-            >
-            <el-form-item prop="username">
-                <!-- <el-input v-model="loginObj.model.username" placeholder="Username" prefix-icon="fas fa-user"></el-input> -->
-                <el-input v-model="loginObj.model.username" placeholder="Username" ></el-input>
-            </el-form-item>
-            <el-form-item prop="password">
-                <el-input
-                    v-model="loginObj.model.password"
-                    placeholder="Password"
-                    type="password"
-                ></el-input>
-            </el-form-item>
-            <el-form-item>
-                <el-button
-                :loading="loading"
-                class="login-button"
-                type="primary"
-                native-type="submit"
-                block
-                >로그인</el-button>
-            </el-form-item>
-            <a class="forgot-password" href="https://oxfordinformatics.com/">Forgot password ?</a>
-            </el-form>
-      </el-card>
+
+        <div>{{ name }}</div>
+        <div>{{ count }}</div>
+        <div><button @click="increment"> UP </button></div>
+
+
+        <div>
+           RET CNT 입니다 :  {{  state.retCnt  }} <br>
+           RET NAME 입니다 : {{ state.retName }} <br>
+           <input v-model="state.retName">
+           <button @click="increment2"> RET UP </button>
+        </div>
+
+
+        <div><input v-model="name"></div>
+        <div>{{ com1 }}</div>
+
     </div>
-  </template>
+</template>
   
   <script setup>
-   
-   const loginObj = {
-       validCredentials: {
-          username: "lightscope",
-          password: "lightscope"
-        },
-        model: {
-          username: "",
-          password: ""
-        },
-        loading: false,
-        rules: {
-          username: [
-            {
-              required: true,
-              message: "Username is required",
-              trigger: "blur"
-            },
-            {
-              min: 4,
-              message: "Username length should be at least 5 characters",
-              trigger: "blur"
-            }
-          ],
-          password: [
-            { required: true, message: "Password is required", trigger: "blur" },
-            {
-              min: 5,
-              message: "Password length should be at least 5 characters",
-              trigger: "blur"
-            }
-          ]
-        }
-    }
+
+  const name = ref('손지만') ;
+  const count = ref(0) ;
+
+  const state = reactive({
+    retCnt : 0 , 
+    retName : '카운터'
+  })
+
+  // function
+  const increment = () => { count.value++ } ;
+
+  const increment2 = () => { state.retCnt++ } ;
+
+  // computed
+  const com1 = computed(()=>{
+    return name.value + ' 입니다' ;
+
+  })
+
+
+
+
 
 //   export default {
 //     name: "login",
