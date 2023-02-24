@@ -1,7 +1,6 @@
-<template>
+  <template>
     <div>
-      Default layout
-      <Login/>
+      <LoginTest/>
     </div>
   </template>
   

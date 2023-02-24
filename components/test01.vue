@@ -9,7 +9,7 @@ const version = 2 + 1
 <template>
   <div>
     <div class="hello" >
-      This is component
+    
     </div>
   </div>
 </template>
