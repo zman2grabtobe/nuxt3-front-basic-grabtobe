@@ -6,12 +6,18 @@
     <div>pending : {{usrLoading}}</div>
     <div v-if="usrError.value"> error   : {{usrError}}</div>
 
+    <div> User Store Info : {{ userStore.user }}</div>
+
     <button @click="login()">Login</button>
 
   </div>
 </template>
   
 <script setup>
+ import { useUserStore } from '~~/stores/users' ;
+
+const userStore  = useUserStore() ;
+
 
 const usrText    = ref('') ; 
 const usrLoading = ref('') ; 
@@ -21,9 +27,9 @@ const login = async () =>{
 
     const url = '/api/user/login' ;
 
-    const result = await useFetch( url ,
+    const result = await fetchApi( url ,
         {   method: 'get' , 
-            query: { id : 'zman2', pass: '9999' } ,
+            query: { id : 'zman2', pass: '9999' } , 
         }
     )
 
@@ -37,6 +43,12 @@ const login = async () =>{
 
     console.log(' usrText.value 1 ===> ' , usrText.value.token ) ;
     console.log(' usrText.value 2 ===> ' , result.data.value.token.accessToken ) ;
+
+    userStore.save({ 
+      usrId : 'zman2', 
+      usrNm : '손지만', 
+      accessToken : result.data.value.token.accessToken , 
+      refreshToken :  result.data.value.token.refreshToken })
 
     // JSON.stringify(result.data.value.token)
 

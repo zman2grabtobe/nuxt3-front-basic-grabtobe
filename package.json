@@ -9,7 +9,14 @@
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.3",
-    "nuxt": "^3.2.0",
+    "@pinia-plugin-persistedstate/nuxt": "^1.0.0",
+    "nuxt": "^3.2.0"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.7",
+    "element-plus": "^2.2.32",
+    "pinia": "^2.0.32",
+    "pinia-plugin-persistedstate": "^3.1.0",
     "sass": "^1.58.3"
   }
 }

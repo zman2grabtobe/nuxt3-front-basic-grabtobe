@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     
-    modules: ['@element-plus/nuxt'],
+    modules: ['@element-plus/nuxt' , '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', ],
     routeRules: {
         // Static page generated on-demand, revalidates in background
         '/blog/**': { swr: true },
