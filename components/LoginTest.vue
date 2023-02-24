@@ -4,11 +4,14 @@
 
     <div>{{usrText}}</div>
     <div>pending : {{usrLoading}}</div>
-    <div v-if="usrError.value"> error   : {{usrError}}</div>
+    <div v-if="usrError.value"> error   : {{usrError}}</div><br><br>
 
-    <div> User Store Info : {{ userStore.user }}</div>
+    <div> User Store Info : {{ userStore.user.usrId }}</div><br><br>
+
+    <!-- <div> myData Info : {{ myData }}</div> -->
 
     <button @click="login()">Login</button>
+    <!-- <button @click="login2()">Login2</button> -->
 
   </div>
 </template>
@@ -22,6 +25,24 @@ const userStore  = useUserStore() ;
 const usrText    = ref('') ; 
 const usrLoading = ref('') ; 
 const usrError   = ref('') ; 
+
+// const loginGo = ref('') ;
+
+// const url22 = computed(() => {
+//  console.log('   usrww 1111  ====  > ' ,  loginGo.value  )
+// return   `${loginGo.value}`});
+
+// console.log('url22 ----->  ' , url22 )
+
+// const {data : myData } = await fetchApi( url22 ,     {  method: 'get' , 
+//             query: { id : 'zman2', pass: '9999' } , 
+//         })
+
+
+const login2 = async () => {
+  loginGo.value = '/api/user/login`';
+};
+
 
 const login = async () =>{
 
