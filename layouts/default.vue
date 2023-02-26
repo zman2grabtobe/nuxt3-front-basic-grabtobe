@@ -4,15 +4,15 @@
       <NuxtLink to="/login">Go to login</NuxtLink>
     </div> -->
     <div>
-      <LoginTest/>
+      <LoginLayout22/>
     </div>
   </template>
 
   <style>
 
-  body {
-    margin: 8px ;
-  }
+  /* body {
+    margin: 0px ;
+  } */
 
 </style>
   
