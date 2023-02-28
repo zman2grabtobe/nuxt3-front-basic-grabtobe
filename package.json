@@ -13,10 +13,13 @@
     "nuxt": "^3.2.0"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.0.10",
     "@pinia/nuxt": "^0.4.7",
     "element-plus": "^2.2.32",
     "pinia": "^2.0.32",
     "pinia-plugin-persistedstate": "^3.1.0",
-    "sass": "^1.58.3"
+    "sass": "^1.58.3", 
+    "unplugin-auto-import": "^0.9.2",
+    "unplugin-vue-components": "^0.21.1"
   }
 }

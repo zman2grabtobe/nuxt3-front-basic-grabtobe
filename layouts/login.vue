@@ -1,7 +1,6 @@
   <template>
-    <NavBar/>
     <div>
-      <NuxtPage keepalive />
+       <NuxtPage/>
     </div>
   </template>
 

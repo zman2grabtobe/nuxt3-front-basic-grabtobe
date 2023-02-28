@@ -7,5 +7,5 @@
         Back to home
       </NuxtLink>
     </div>
-  </template>
+</template>
   

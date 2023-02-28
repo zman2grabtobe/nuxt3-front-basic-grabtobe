@@ -22,7 +22,12 @@
         </el-sub-menu>
       </el-sub-menu>
       <el-menu-item index="3" disabled>Info</el-menu-item>
-      <el-menu-item index="4">Business</el-menu-item>
+      <el-menu-item index="4"><NuxtLink to="/home">Business1</NuxtLink></el-menu-item>
+      <el-menu-item index="5"><NuxtLink to="/home2">Business1</NuxtLink></el-menu-item>
+      <el-menu-item index="6"><NuxtLink to="/auth/login">로그인</NuxtLink></el-menu-item>
+      <el-menu-item index="7">Business4</el-menu-item>
+      <el-menu-item index="8">Business5</el-menu-item>
+      <el-menu-item index="9">매출 및 목표관리</el-menu-item>
     </el-menu>
   </template>
   
@@ -31,9 +36,11 @@
   
   const activeIndex = ref('1')
   const activeIndex2 = ref('1')
+
   const handleSelect = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
   }
+
   </script> 
 
 <style>

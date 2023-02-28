@@ -1,6 +1,6 @@
 $-colors: (
   'primary': (
-    'base': rgba(107,33,168, 1),
+    'base': #1e4e9c,
   ),
   'success': (
     'base': #67c23a,
@@ -17,9 +17,7 @@ $-colors: (
   'info': (
     'base': #9d3717,
   ),
-  'zman': (
-    'base': #a72f69,
-  ),
+
 );
 
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
@@ -27,3 +25,5 @@ $-colors: (
 );
 
 @use './dark.scss';
+
+
