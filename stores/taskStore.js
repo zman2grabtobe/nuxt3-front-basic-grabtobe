@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { createPersistedState } from '@pinia/plugin-persistedstate'
+// import { createPersistedState } from '@pinia/plugin-persistedstate'
 
 export const useTaskStore = defineStore('task', () => {
 
@@ -92,7 +92,7 @@ export const useTaskStore = defineStore('task', () => {
   }
 
    // persist 옵션 적용
-   createPersistedState({ persist: true })(useTaskStore)
+  //  createPersistedState({ persist: true })(useTaskStore)
 
   return {
 
