@@ -1,7 +1,6 @@
 <template>
     <div>
-        기본 페이지 입니다
-        <button @click="linkTo"> 다음 페이지로 넘김</button>
+        <home/>
     </div>
 </template>
 

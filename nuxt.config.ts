@@ -22,6 +22,13 @@ export default defineNuxtConfig({
         // '/old-page2': { redirect: { to: '/new-page', statusCode: 302 } }
       } ,
 
+      piniaPersistedstate: {
+        cookieOptions: {
+          sameSite: 'strict',
+        },
+        storage: 'localStorage'
+      },
+
       css: ['~/assets/scss/index.scss'],
 
       vite: {
