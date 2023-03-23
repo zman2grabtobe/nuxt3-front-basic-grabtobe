@@ -1,19 +1,17 @@
 <template>
 
     <el-tabs
-      v-model="taskStore.getActiveTaskName"
+      v-model="editableTabsValue"
       type="card"
       class="demo-tabs"
       closable
-      @tab-remove="taskStore.removeTaskList"
-    
-     >
+      @tab-change="taskStore.updateActiveTaskName"
+      @tab-remove="taskStore.removeTaskList">
       <el-tab-pane
         v-for="item in taskStore.getTaskList"
         :key="item.name"
         :label="item.title"
         :name="item.name"/>
-  
     </el-tabs>
 
   </template>
@@ -28,14 +26,15 @@
 //       return visitedStore.activeTabName ;
 //     }) ;
   
-//   const editableTabsValue = ref('2010') ;
+  const editableTabsValue = ref('1001') ;
 
-//   watch(taskStore.taskList, (newVal, oldVal) => {
+  watch(taskStore.getActiveTaskName, (newVal, oldVal) => {
 
-//      console.log('watch data 변경 ==> ' , newVal )
-      
-//      editableTabsValue.value = taskStore.getActiveTaskName ;
-//     });
+     console.log('watch data 변경 ==> ' , newVal )
+    
+    // TODO ::: 여기 지우고 테스트 해 보면 됨
+    //  editableTabsValue.value = taskStore.getActiveTaskName ;
+    });
 
 
 //   const changeTab = (tab) => {
