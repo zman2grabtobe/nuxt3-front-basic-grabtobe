@@ -104,6 +104,10 @@ export const useTaskStore = defineStore('task', () => {
 
   }
 
-  
-
-})
+  },
+  {
+    persist: {
+      storage: persistedState.localStorage,
+    },
+  },
+)

@@ -5,7 +5,7 @@
       type="card"
       class="task-tabs"
       closable
-      @tab-change="taskStore.updateActiveTaskName"
+      @tab-change="taskChange"
       @tab-remove="taskStore.removeTaskList">
       <el-tab-pane
         v-for="item in taskStore.getTaskList"
@@ -21,8 +21,21 @@
 
   import { useTaskStore } from '@/stores/taskStore' ;
 
-  const taskStore  = useTaskStore() ;
-  const activeTaskValue =  ref('') ;
+  const router = useRouter();
+
+  const taskStore = useTaskStore() ;
+  const activeTaskValue = ref('')  ;
+
+  const taskChange = (_taskName) =>{
+
+    console.log('task name = >>> ' ,  _taskName ) ; 
+
+    router.push({ path: _taskName });
+
+    taskStore.updateActiveTaskName(_taskName) ;
+
+
+  }
 
   //% activeTaskValue 에 직접 taskStore.getActiveTaskName() 연결 시 event handle 오류 발생 하여 watch 로 구현
   //% TODO :: watch 제거 하여 재구현 할 것  ( 오류 원인 파악 안 됨 )
@@ -32,7 +45,7 @@
   });
 
   onMounted(() => {
-    activeTaskValue.value = taskStore.getActiveTaskName.taskName || '1001' ; 
+    activeTaskValue.value = taskStore.getActiveTaskName.taskName || '/dashboard/Dashboard' ; 
   });  
 
 </script>

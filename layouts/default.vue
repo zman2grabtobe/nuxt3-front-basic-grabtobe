@@ -11,7 +11,7 @@
             </el-scrollbar>
         </el-aside>
               <el-container class="layout-main-container" >
-                <el-header><VisitedTab/></el-header>
+                <el-header><TaskBar/></el-header>
                  <el-scrollbar>
                    <el-main class="layout-main" >
                     
