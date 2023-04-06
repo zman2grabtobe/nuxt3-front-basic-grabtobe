@@ -6,53 +6,43 @@
         @open ="handleOpen"
         @close="handleClose"
       >
-
-      <el-sub-menu v-for="( menuList , i ) in menuList"  :key="i" :index="menuList.index">
-          <template #title>
-            <!-- <el-icon><Goods /></el-icon> -->
-            <el-icon><component :is="menuList.icon"></component></el-icon>
-            <span>{{menuList.title}}</span>
-          </template>
-            <el-menu-item v-for="(itemlist , j) in menuList.submenu" :key="j" :index="itemlist.index" @click="moveMenu(itemlist)">{{itemlist.title}}</el-menu-item>
-       </el-sub-menu>
-       
+         <el-sub-menu v-for="(menuList , i) in menuList" :key="i" :index="menuList.index">
+            <template #title>
+              <!-- <el-icon><Goods /></el-icon> -->
+              <el-icon><component :is="menuList.icon"></component></el-icon>
+              <span>{{menuList.title}}</span>
+            </template>
+              <el-menu-item v-for="(item , j) in menuList.submenu" :key="j" :index="item.index" @click="goMenu(item)">{{item.title}}</el-menu-item>
+         </el-sub-menu>
       </el-menu>
   
  </template>
 
-<script  setup>
-import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-  Goods,
-  House,
-  ArrowDown,
-  ArrowUp,
-  Coin,
-  Star,
-  Rank,
-  Box,
-  Memo,
-  DocumentCopy,
-  DataAnalysis,
-  Calendar,
+<script setup>
+ import {
+    Document,
+    Menu as IconMenu,
+    Location,
+    Setting,
+    Goods,
+    House,
+    ArrowDown,
+    ArrowUp,
+    Coin,
+    Star,
+    Rank,
+    Box,
+    Memo,
+    DocumentCopy,
+    DataAnalysis,
+    Calendar,
 
-} from '@element-plus/icons-vue' ;
-
+  } from '@element-plus/icons-vue' ;
 import { useTaskStore } from '@/stores/taskStore' ;
 
 const taskStore  = useTaskStore() ;
-
-const moveMenu = ( itemList ) => {
-
-  console.log(' itemList ==> ' ,  itemList ) ;
-  console.log(' taskStore.taskList ==> ' ,  taskStore.taskList ) ;
-
-  // taskStore.updateTaskList({ title : itemList.title , name : itemList.index  , content : itemList.title , active : true }) ;
+const goMenu = ( itemList ) => {
   taskStore.updateTaskList({ title : itemList.title , name : itemList.route  , content : itemList.title , active : true }) ;
-
 };
 
 const menuList = [
@@ -133,12 +123,12 @@ const menuList = [
 ]
 
 
-const handleOpen = (key, keyPath) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key, keyPath) => {
-  console.log(key, keyPath)
-}
+  const handleOpen = (key, keyPath) => {
+    console.log(key, keyPath)
+  }
+  const handleClose = (key, keyPath) => {
+    console.log(key, keyPath)
+  }
 
 </script>
 
